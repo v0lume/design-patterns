@@ -11,8 +11,8 @@ export class Client {
         this.item = item;
     }
 
-    sendToShipment(): void {
+    async sendToShipment(): Promise<void> {
         // simulate backend response
-        new Promise(() => setTimeout(() => this.item.ship(), 1000)).then(console.log);
+        return new Promise(resolve => setTimeout(() => resolve(this.item.ship()), 1000)).then(console.log);
     }
 }
